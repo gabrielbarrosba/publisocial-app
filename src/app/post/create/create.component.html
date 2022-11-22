@@ -1,0 +1,73 @@
+<div class="container internal">
+    <h1>Cadastro de Multirão</h1>
+  
+        
+    <form [formGroup]="form" (ngSubmit)="submit()">
+  
+        <div class="form-group">
+            <label for="name">Nome do Evento</label>
+            <input 
+                formControlName="name"
+                id="name" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+                <div *ngIf="f['name'].errors && f['name'].errors['required']">Preenchimento Obrigatório</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="category">Categoria</label>
+            <input 
+                formControlName="category"
+                id="category" 
+                type="category" 
+                class="form-control">
+            <div *ngIf="f['category'].touched && f['category'].invalid" class="alert alert-danger">
+                <div *ngIf="f['category'].errors && f['category'].errors['required']">Preenchimento Obrigatório</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Data</label>
+            <input 
+                formControlName="date"
+                id="date" 
+                type="date" 
+                class="form-control">
+            <div *ngIf="f['date'].touched && f['date'].invalid" class="alert alert-danger">
+                <div *ngIf="f['date'].errors && f['date'].errors['required']">Preenchimento Obrigatório</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="local">Local</label>
+            <input 
+                formControlName="local"
+                id="local" 
+                type="local" 
+                class="form-control">
+            <div *ngIf="f['local'].touched && f['local'].invalid" class="alert alert-danger">
+                <div *ngIf="f['local'].errors && f['local'].errors['required']">Preenchimento Obrigatório</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Descrição</label>
+            <textarea 
+                formControlName="description"
+                id="description" 
+                type="description" 
+                class="form-control">
+            </textarea>
+            <div *ngIf="f['description'].touched && f['description'].invalid" class="alert alert-danger">
+                <div *ngIf="f['description'].errors && f['description'].errors['required']">Preenchimento Obrigatório</div>
+            </div>
+        </div>
+  
+        <button class="btn btn-primary button" type="submit" [disabled]="!form.valid">Cadastrar</button>
+
+        <a href="#" routerLink="/post/index" class="btn btn-primary button">Listagem de Multirões</a>
+
+    </form>
+</div>
