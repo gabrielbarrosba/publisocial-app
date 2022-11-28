@@ -1,7 +1,7 @@
 <div class="container internal">
-    <h1>Listagem de todos os multirões cadastrados no sistema</h1>
+    <h1>Listagem de todos os mutirões cadastrados no sistema</h1>
   
-    <a href="#" routerLink="/post/create/" class="btn btn-success button">Criar novo Multirão</a>
+    <a href="#" routerLink="/post/create/" class="btn btn-success button-internal">Criar novo Multirão</a>
     
     <table class="table table-striped">
     	<thead>
@@ -11,22 +11,20 @@
 		        <th>Categoria</th>
 				<th>Data</th>
 				<th>Local</th>
-				<th>Descrição</th>
-		        <th width="250px">Action</th>
+		        <th width="250px">Controle</th>
 	      	</tr>
 	    </thead>
       	<tbody>
 	      	<tr *ngFor="let post of posts">
+				<td>{{ post.id }}</td>
 		        <td>{{ post.name }}</td>
 		        <td>{{ post.category }}</td>
 		        <td>{{ post.date }}</td>
 				<td>{{ post.local }}</td>
-		        <td>{{ post.description }}</td>
-				<td></td>
 		        <td>
-		          <a href="#" [routerLink]="['/post/', post.id, 'view']" class="btn btn-info">View</a>
-		          <a href="#" [routerLink]="['/post/', post.id, 'edit']" class="btn btn-primary">Edit</a>
-		          <button type="button" (click)="deletePost(post.id)" class="btn btn-danger">Delete</button>
+		          <a href="#" [routerLink]="['/post/', post.id, 'view']" class="btn btn-info">Mais</a>
+		          <a href="#" [routerLink]="['/post/', post.id, 'edit']" class="btn btn-primary">Editar</a>
+		          <button type="button" (click)="deletePost(post.id)" class="btn btn-danger">Excluir</button>
 		        </td>
 	      	</tr>
  	   </tbody>

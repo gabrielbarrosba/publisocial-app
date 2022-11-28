@@ -4,12 +4,18 @@
 .button{
     background-color: #f36e2d;
     border: none;
-    margin-top: 2%;
+    margin-left: 2%;
 }
 
-.button:hover{
-    background-color: #fff;
-    color: #f36e2d;
+.button-internal{
+    background-color: #f36e2d;
+    border: none;
+    margin: 2% 0;
+}
+
+.button:hover, .button-internal:hover{
+    background-color: #00998E;
+    color: #fff;
     border: #f36e2d;
 }
 
